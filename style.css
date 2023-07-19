@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* Colors */ 
+
+    /*  Primary */
+    
+    /*  Text */
+    
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    
+    /*  Gradient */
+    
+    /* Background gradient: */
+    
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    
+    /* Neutral */
+    
+    /* Text */
+    
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    
+    /* Dividers */
+    
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+    
+    /* Fonts */
+    --Font-size: 12px;
+    --Font-Family: 'Kumbh Sans',sans-serif;
+    --Font-Weight-normal: 400;
+    --Font-Weight-bold: 700;
+
+}
+body {
+    background: linear-gradient(to bottom, var(--Soft-violet),var(--Soft-blue));
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: var(--Font-Family);
+    height: 100vh;
+    width: 100%; 
+  }
+  
+  #card {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%,-50%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
+    border-radius: 2rem;
+    max-width: 950px;
+    height: 500px;
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    flex-direction: row ;
+    gap: 2rem;
+  }
+  
+.images{
+width: 50%;
+padding-bottom: 2%;
+position: relative;
+}
+.imgOne{
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/illustration-woman-online-desktop.svg');
+    background-repeat:no-repeat ;
+    background-position-x: -80px;
+    background-position-y: 70px;
+    background-size: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.imgTwo{
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 180%;
+    background-position-x: -445px;
+    background-position-y:-205px;
+    position: absolute;
+}
+.imgTwo > img,.imgThree > img{
+    display: none;
+}
+.imgOne img {
+    position: absolute;
+    top:36%;
+    left: -26%;
+}
+
+h1{
+    color: var(--Very-dark-desaturated-blue);
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.right{
+    padding: 0.8rem 4rem 1rem 1rem;
+    width: 50%;
+    max-height: 100%;
+     overflow-y: hidden;
+}
+.faq{
+    min-width: 300px;
+    margin-top: 1.2rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--Very-dark-grayish-blue);
+    overflow: hidden;
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.question > h3{
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--Very-dark-grayish-blue);
+}
+.question > h3:hover{
+    color:var(--Soft-red) ;
+}
+
+.answer > p{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: var(--Font-size);
+    color: var(--Very-dark-grayish-blue);
+    font-weight: var(--Font-Weight-normal);
+}
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  /* Display the answer when the faq is active */
+.faq.active .answer {
+    max-height: 300px; /* You can adjust the height as needed */
+}
+
+.faq.active h3{
+    color: var(--Very-dark-desaturated-blue);
+    font-weight: var(--Font-Weight-bold);
+}
+.faq.active img{
+    transform: rotate(180deg);
+}
+.arrow-icon{
+    transition: transform .3s ease-in-out;
+}
+ @media (max-width:400px) {
+    #card{
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        left: 35%;
+        height: fit-content;
+    }
+    h1{
+        text-align: center;
+    }
+    .right{
+        margin-top: 20%;
+        margin-bottom: 15%;
+        width: 87%;
+        margin-right: auto;
+        margin-left:0.7rem;
+    }
+    .question{
+        width: 100%;
+    }
+    .imgOne{
+        display: none;
+    }
+    .imgTwo > img{
+        display: inline-block;
+        position:absolute;
+        top: -125px;
+        right: -30%;
+        left: -40px;
+    }
+    .imgThree img{
+      display: block;
+      position: absolute;
+        left: -25px;
+        top: 3px;
+    }
+
+    
+    
+    
+    
+ }
